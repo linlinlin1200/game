@@ -1,0 +1,152 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #3E5F8A; /* Общий фон страницы */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 10; /* Обеспечим, чтобы кнопки регистрации и входа были поверх */
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color:  #003153;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0e1748;
+}
+
+.modal {
+    display: none; /* Начальное скрытие модального окна */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Полупрозрачный фон */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Убедимся, что окно будет поверх всех слоев */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px; /* Ограничение максимальной ширины */
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тень для более привлекательного вида */
+    animation: fadeIn 0.3s ease-in-out; /* Плавное появление окна */
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+input {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* Учитывает padding при расчете ширины */
+}
+
+button.submit {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button.submit:hover {
+    background-color: #45a049;
+}
+
+/* Кнопка "Закрыть" */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d; /* Красный цвет для кнопки закрытия */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #e60000; /* Более темный красный при наведении */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* Блок с картинкой и кнопками */
+.sidebar {
+    position: fixed;
+    right: 0;
+    top: 20%; /* Отступ сверху, чтобы сдвигать блок ниже */
+    width: 40%; /* Ширина блока увеличена до 40% */
+    height: auto; /* Суммарная высота блока будет зависеть от содержимого */
+    text-align: center;
+    padding: 0; /* Убираем отступы вокруг, чтобы они не создавали пустое пространство */
+}
+
+.sidebar .image {
+    width: 90%; /* Изображение теперь занимает больше места */
+    max-width: 350px; /* Максимальная ширина изображения увеличена */
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%; /* Делаем картинку круглой */
+    margin-bottom: 30px; /* Отступ снизу для картинки */
+}
+
+.sidebar .buttons {
+    display: flex; /* Используем Flexbox для выравнивания кнопок в строку */
+    justify-content: space-around; /* Равномерно распределяем кнопки */
+    gap: 20px; /* Увеличен отступ между кнопками */
+    margin-top: 30px; /* Отступ сверху для кнопок */
+}
+
+.sidebar .buttons button {
+    padding: 18px 100px; /* Увеличены отступы внутри кнопок */
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Увеличен размер шрифта */
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.sidebar .buttons button:hover {
+    background-color: #1976D2;
+}
