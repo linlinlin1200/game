@@ -5,6 +5,9 @@ const registerBtn = document.getElementById('register-btn');
 const loginBtn = document.getElementById('login-btn');
 const closeRegisterBtn = document.getElementById('close-register');
 const closeLoginBtn = document.getElementById('close-login');
+const playBtn = document.getElementById('play-btn');
+const playModal = document.getElementById('play-modal');
+const cancelPlayBtn = document.getElementById('cancel-btn');
 
 // Логика отображения модальных окон
 registerBtn.addEventListener('click', () => {
@@ -19,6 +22,13 @@ closeRegisterBtn.addEventListener('click', () => {
 closeLoginBtn.addEventListener('click', () => {
     loginModal.style.display = 'none';
 });
+playBtn.addEventListener('click', () => {
+    playModal.style.display = 'flex';
+});
+cancelPlayBtn.addEventListener('click', () => {
+    playModal.style.display = 'none';
+});
+
 
 // Локальное хранилище для пользователей
 let users = JSON.parse(localStorage.getItem('users')) || [];
@@ -60,3 +70,4 @@ document.getElementById('login-submit').addEventListener('click', () => {
         alert('Неверное имя пользователя или пароль');
     }
 });
+

@@ -47,7 +47,7 @@ button:hover {
     width: 90%;
     max-width: 400px; /* Ограничение максимальной ширины */
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тень для более привлекательного вида */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 1); /* Тень для более привлекательного вида */
     animation: fadeIn 0.3s ease-in-out; /* Плавное появление окна */
 }
 

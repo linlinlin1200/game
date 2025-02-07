@@ -1,46 +1,60 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Кто хочет стать миллионером</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <div class="header">
-        <button id="register-btn">Зарегистрироваться</button>
-        <button id="login-btn">Войти</button>
+      <button id="register-btn">Зарегистрироваться</button>
+      <button id="login-btn">Войти</button>
     </div>
 
     <!-- Модальные окна для регистрации и входа -->
     <div id="register-modal" class="modal">
-        <div class="modal-content">
-            <h2>Регистрация</h2>
-            <input type="text" id="reg-username" placeholder="Имя пользователя">
-            <input type="password" id="reg-password" placeholder="Пароль">
-            <button id="register-submit">Зарегистрироваться</button>
-            <button id="close-register">Закрыть</button>
-        </div>
+      <div class="modal-content">
+        <h2>Регистрация</h2>
+        <input type="text" id="reg-username" placeholder="Имя пользователя" />
+        <input type="password" id="reg-password" placeholder="Пароль" />
+        <button id="register-submit">Зарегистрироваться</button>
+        <button id="close-register">Закрыть</button>
+      </div>
     </div>
 
     <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <h2>Вход</h2>
-            <input type="text" id="login-username" placeholder="Имя пользователя">
-            <input type="password" id="login-password" placeholder="Пароль">
-            <button id="login-submit">Войти</button>
-            <button id="close-login">Закрыть</button>
-        </div>
+      <div class="modal-content">
+        <h2>Вход</h2>
+        <input type="text" id="login-username" placeholder="Имя пользователя" />
+        <input type="password" id="login-password" placeholder="Пароль" />
+        <button id="login-submit">Войти</button>
+        <button id="close-login">Закрыть</button>
+      </div>
     </div>
     <!-- Блок с изображением и кнопками -->
     <div class="sidebar">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKyZGP1Qsrv7nkYSZI7EZBZGoxMaciLHKwHQ&s" class="image">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKyZGP1Qsrv7nkYSZI7EZBZGoxMaciLHKwHQ&s"
+        class="image"
+      />
+      <div class="buttons">
+        <button id="play-btn">Играть</button>
+        <button id="rating-btn">Рейтинг</button>
+      </div>
+    </div>
+
+    <!-- Окно игры -->
+    <div id="play-modal" class="modal">
+      <div class="modal-content">
+        <h1>Кто хочет стать миллионером?</h1>
         <div class="buttons">
-            <button id="play-btn">Играть</button>
-            <button id="rating-btn">Рейтинг</button>
+          <button id="confirm-btn">Подтвердить</button>
+          <button id="cancel-btn">Отмена</button>
         </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
