@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
@@ -38,36 +38,28 @@
       <div class="buttons">
         <button id="play-btn">Играть</button>
         <button id="rating-btn">Рейтинг</button>
+        <button id="confirm-btn">Подтвердить</button>
       </div>
     </div>
-      <!-- Окно с вопросами -->
-      <div id="question-modal" class="modal">
+
+    <!-- Модальное окно для подтверждения -->
+    <div id="confirm-modal" class="modal">
       <div class="modal-content">
-        <h2 id="question-text">Вопрос</h2>
-        <div class="answers">
-          <button class="answer-btn" data-answer="1">Ответ 1</button>
-          <button class="answer-btn" data-answer="2">Ответ 2</button>
-          <button class="answer-btn" data-answer="3">Ответ 3</button>
-          <button class="answer-btn" data-answer="4">Ответ 4</button>
-        </div>
+        <h2>Подтверждение</h2>
+        <p>Вы уверены, что хотите продолжить?</p>
+        <button id="confirm-submit">Да</button>
+        <button id="close-confirm">Нет</button>
       </div>
     </div>
-    <div class="scoreboard">
-      <h2>Ваши баллы: <span id="score">0</span></h2>
-  </div>
 
+    <script>
+      document.getElementById('confirm-btn').addEventListener('click', function() {
+        document.getElementById('confirm-modal').style.display = 'block';
+      });
 
-
-    <!-- Окно игры -->
-    <div id="play-modal" class="modal">
-      <div class="modal-content">
-        <h1>Кто хочет стать миллионером?</h1>
-        <div class="buttons">
-          <button id="confirm-btn">Подтвердить</button>
-          <button id="cancel-btn">Отмена</button>
-        </div>
-      </div>
-    </div>
-    <script src="script.js"></script>
+      document.getElementById('close-confirm').addEventListener('click', function() {
+        document.getElementById('confirm-modal').style.display = 'none';
+      });
+    </script>
   </body>
 </html>
