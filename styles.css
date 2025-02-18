@@ -151,7 +151,7 @@ button.submit:hover {
     background-color: #1976D2;
 }
 
-.modal-quiz {
+.modal-contetn {
     display: none; 
     position: fixed;
     top: 0;
@@ -164,7 +164,7 @@ button.submit:hover {
     z-index: 9999;
 }
 
-.modal-quiz-content {
+.modal-content {
     background-color: white;
     padding: 30px;
     border-radius: 8px;
@@ -175,25 +175,25 @@ button.submit:hover {
     animation: fadeIn 0.3s ease-in-out; /
 }
 
-.modal-quiz-content h2 {
+.modal-content h2 {
     margin-bottom: 20px;
     color: #333;
     font-size: 24px;
 }
 
-.modal-quiz-content .question {
+.modal-content .question {
     margin-bottom: 20px;
     font-size: 20px;
     color: #333;
 }
 
-.modal-quiz-content .answers {
+.modal-content .answers {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.modal-quiz-content .answers button {
+.modal-content .answers button {
     padding: 10px;
     background-color: #2196F3;
     color: white;
@@ -201,12 +201,14 @@ button.submit:hover {
     cursor: pointer;
     font-size: 16px;
     border-radius: 4px;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, transform 0.3s;
 }
 
-.modal-quiz-content .answers button:hover {
-    background-color: #1976D2;
+.modal-content .answers button:hover {
+    background-color: #1565C0;
+    transform: scale(1.05);
 }
+
 /* балы */
 .scoreboard {
     position: fixed;
@@ -222,6 +224,7 @@ button.submit:hover {
     display: flex;
     align-items: center;
 }
+
 
 .scoreboard .icon {
     margin-right: 15px;
