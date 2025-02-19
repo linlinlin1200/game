@@ -75,7 +75,6 @@ function loadQuestion() {
     });
 }
 
-
 registerBtn.addEventListener('click', () => {
     registerModal.style.display = 'flex';
 });
@@ -95,9 +94,7 @@ cancelPlayBtn.addEventListener('click', () => {
     playModal.style.display = 'none';
 });
 
-
 let users = JSON.parse(localStorage.getItem('users')) || [];
-
 
 document.getElementById('register-submit').addEventListener('click', () => {
     const username = document.getElementById('reg-username').value;
@@ -125,8 +122,25 @@ document.getElementById('login-submit').addEventListener('click', () => {
     const user = users.find(user => user.username === username && user.password === password);
     if (user) {
         sessionStorage.setItem('currentUser', JSON.stringify(user));
+        score = user.points;
+        document.getElementById('score').textContent = ` ${score}`;
         loginModal.style.display = 'none';
     } else {
         alert('Неверное имя пользователя или пароль');
     }
 });
+
+function updateScore(points) {
+    score += points;
+    document.getElementById('score').textContent = ` ${score}`;
+    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    if (currentUser) {
+        currentUser.points = score;
+        sessionStorage.setItem('currentUser', JSON.stringify(currentUser));
+        const userIndex = users.findIndex(user => user.username === currentUser.username);
+        if (userIndex !== -1) {
+            users[userIndex].points = score;
+            localStorage.setItem('users', JSON.stringify(users));
+        }
+    }
+}
