@@ -15,18 +15,6 @@ const answerButtons = document.querySelectorAll('.answer-btn');
 let score = 0;
 let currentQuestionIndex = 0;
 let questions = [];
-
-const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-if (currentUser) {
-    score = currentUser.points;
-    document.getElementById('score').textContent = ` ${score}`;
-}
-
-function updateScore(points) {
-    score += points;
-    document.getElementById('score').textContent = ` ${score}`;
-}
-
 fetch('questions.json')
     .then(response => response.json())
     .then(data => {
@@ -144,3 +132,43 @@ function updateScore(points) {
         }
     }
 }
+
+function updateLeaderboard() {
+    const leaderboard = document.getElementById('leaderboard');
+    leaderboard.innerHTML = '';
+
+    const headerRow = document.createElement('tr');
+    const headerUsernameCell = document.createElement('th');
+    const headerPointsCell = document.createElement('th');
+
+    headerUsernameCell.textContent = 'Имя пользователя';
+    headerPointsCell.textContent = 'Баллы';
+
+    headerRow.appendChild(headerUsernameCell);
+    headerRow.appendChild(headerPointsCell);
+    leaderboard.appendChild(headerRow);
+
+    const sortedUsers = [...users].sort((a, b) => b.points - a.points);
+
+    sortedUsers.forEach((user, index) => {
+        const row = document.createElement('tr');
+        const usernameCell = document.createElement('td');
+        const pointsCell = document.createElement('td');
+
+        usernameCell.textContent = user.username;
+        pointsCell.textContent = user.points;
+
+        row.appendChild(usernameCell);
+        row.appendChild(pointsCell);
+        leaderboard.appendChild(row);
+
+        if (index >= 10) {
+            row.style.display = 'none';
+        }
+    });
+
+    leaderboard.style.maxHeight = '200px'; 
+    leaderboard.style.overflowY = 'auto';
+}
+
+updateLeaderboard();

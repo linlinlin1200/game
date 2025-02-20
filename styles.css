@@ -151,36 +151,6 @@ button.submit:hover {
     background-color: #1976D2;
 }
 
-.modal-contetn {
-    display: none; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); 
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    width: 90%;
-    max-width: 500px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
-    animation: fadeIn 0.3s ease-in-out; /
-}
-
-.modal-content h2 {
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
-}
-
 .modal-content .question {
     margin-bottom: 20px;
     font-size: 20px;
@@ -231,4 +201,54 @@ button.submit:hover {
     vertical-align: middle;
     font-size: 28px; 
     color: white; 
+}
+#leaderboard table tbody {
+    display: block;
+    max-height: 400px; 
+    overflow-y: auto;
+}
+
+#leaderboard table thead, #leaderboard table tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+#leaderboard {
+    position: fixed;
+    left: 0;
+    top: 20%;
+    width: 40%;
+    background-color: #2d4d7b;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 70%;
+}
+
+#leaderboard h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#leaderboard th, #leaderboard td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #3E5F8A;
+}
+
+#leaderboard th {
+    background-color: #244b80;
+    color: #333;
+}
+
+#leaderboard tr:hover {
+    background-color: #244b80;
 }
