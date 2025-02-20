@@ -4,6 +4,7 @@ body {
   padding: 0;
   display: flex;
   background-color: #3e5f8a;
+  color: white;
 }
 
 .header {
@@ -171,7 +172,8 @@ button.submit:hover {
   cursor: pointer;
   font-size: 16px;
   border-radius: 4px;
-  transition: background-color 0.3s ease-in-out, transform 0.3s;
+  transition: 0.3s ease-in-out;
+  transform: 0.3s;
 }
 
 .modal-content .answers button:hover {
@@ -194,6 +196,7 @@ button.submit:hover {
   display: flex;
   align-items: center;
 }
+
 .login {
   position: fixed;
   top: 10px;
@@ -227,6 +230,7 @@ button.submit:hover {
   width: 100%;
   table-layout: fixed;
 }
+
 #leaderboard {
   position: fixed;
   left: 0;
@@ -261,7 +265,7 @@ button.submit:hover {
 
 #leaderboard th {
   background-color: #244b80;
-  color: #333;
+  color: #ceedff;
 }
 
 #leaderboard tr:hover {
