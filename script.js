@@ -29,6 +29,28 @@ function shuffleQuestions() {
         [questions[i], questions[j]] = [questions[j], questions[i]];
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    if (currentUser) {
+        document.getElementById('login').textContent = currentUser.username;
+    }
+});
+
+document.getElementById('login-submit').addEventListener('click', () => {
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+
+    const user = users.find(user => user.username === username && user.password === password);
+    if (user) {
+        sessionStorage.setItem('currentUser', JSON.stringify(user));
+        score = user.points;
+        document.getElementById('score').textContent = ` ${score}`;
+        document.getElementById('login').textContent = user.username; 
+        loginModal.style.display = 'none';
+    } else {
+        alert('Неверное имя пользователя или пароль');
+    }
+});
 
 confirmBtn.addEventListener('click', () => {
     playModal.style.display = 'none';
@@ -103,20 +125,6 @@ document.getElementById('register-submit').addEventListener('click', () => {
     }
 });
 
-document.getElementById('login-submit').addEventListener('click', () => {
-    const username = document.getElementById('login-username').value;
-    const password = document.getElementById('login-password').value;
-
-    const user = users.find(user => user.username === username && user.password === password);
-    if (user) {
-        sessionStorage.setItem('currentUser', JSON.stringify(user));
-        score = user.points;
-        document.getElementById('score').textContent = ` ${score}`;
-        loginModal.style.display = 'none';
-    } else {
-        alert('Неверное имя пользователя или пароль');
-    }
-});
 
 function updateScore(points) {
     score += points;
