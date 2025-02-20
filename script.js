@@ -45,7 +45,7 @@ document.getElementById('login-submit').addEventListener('click', () => {
         sessionStorage.setItem('currentUser', JSON.stringify(user));
         score = user.points;
         document.getElementById('score').textContent = ` ${score}`;
-        document.getElementById('login').textContent = user.username; 
+        document.getElementById('login').textContent = user.username;
         loginModal.style.display = 'none';
     } else {
         alert('Неверное имя пользователя или пароль');
@@ -62,7 +62,7 @@ answerButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
         if (index === questions[currentQuestionIndex].correct_answer) {
             alert('Correct!');
-            updateScore(1); 
+            updateScore(1);
             currentQuestionIndex++;
             if (currentQuestionIndex < questions.length) {
                 loadQuestion();
@@ -175,7 +175,7 @@ function updateLeaderboard() {
         }
     });
 
-    leaderboard.style.maxHeight = '200px'; 
+    leaderboard.style.maxHeight = '200px';
     leaderboard.style.overflowY = 'auto';
 }
 
