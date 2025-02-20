@@ -4,7 +4,7 @@ body {
   padding: 0;
   display: flex;
   background-color: #3e5f8a;
-  color: white;
+  /* color: white; */
 }
 
 .header {
@@ -261,6 +261,7 @@ button.submit:hover {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #3e5f8a;
+  color: white;
 }
 
 #leaderboard th {
